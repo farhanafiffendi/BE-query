@@ -1,12 +1,15 @@
-const express = require("express");
+const express = require('express')
+
+// Get routes to the variabel
+const router = require('./src/routes')
+
 const app = express()
-const router = require("./src/routes")
 
 const port = 5000
 
 app.use(express.json())
 
-app.use("/api/v1/", router)
+// Add endpoint grouping and router
+app.use('/api/v1/', router)
 
-
-app.listen(port, () => console.log(`server running on port: ${port}`))
+app.listen(port, () => console.log(`Listening on port ${port}!`))
